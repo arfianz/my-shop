@@ -12,3 +12,6 @@ Part 1 : Header Component
 3. Costumizing menu bar part 1
 4. Costumizing menu bar part 2
 5. Add search bar
+
+Part 2 : Footer Component
+1. Add Footer
