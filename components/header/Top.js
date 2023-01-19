@@ -11,41 +11,46 @@ import { useState } from 'react';
 import UserMenu from './UserMenu';
 
 export default function Top() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   return (
     <div className={styles.top}>
       <div className={styles.top__container}>
         <div></div>
         <ul className={styles.top__list}>
-          <li>
+          <li className={styles.li}>
             <img
               src='https://www.seekpng.com/png/detail/154-1542644_small-25mm-lapel-pin-button-badge-novelty-indonesia.png'
               alt=''
             />
             <span>idr / usd</span>
           </li>
-          <li>
+          <li className={styles.li}>
             <MdSecurity />
             <span>Buyer protect</span>
           </li>
-          <li>
+          <li className={styles.li}>
             <BsFillTelephoneFill />
             <span>Customer Service</span>
           </li>
-          <li>
+          <li className={styles.li}>
             <BsFillEmojiSmileFill />
             <span>Help</span>
           </li>
-          <li>
+          <li className={styles.li}>
             <BsSuitHeart />
             <Link href='/profile/wishlist'>
               <span>Wishlist</span>
             </Link>
           </li>
-          <li>
+          <li
+            className={styles.li}
+            onMouseOver={() => setVisible(true)}
+            onMouseLeave={() => setVisible(false)}
+          >
             {loggedIn ? (
-              <li>
+              <li className={styles.li}>
                 <div className={styles.flex}>
                   <img src='https://www.pngarts.com/files/11/Avatar-PNG-Picture.png' />
                   <span>Mr. XXX</span>
@@ -53,7 +58,7 @@ export default function Top() {
                 </div>
               </li>
             ) : (
-              <li>
+              <li className={styles.li}>
                 <div className={styles.flex}>
                   <RiAccountPinCircleLine />
                   <span>Account</span>
@@ -61,7 +66,7 @@ export default function Top() {
                 </div>
               </li>
             )}
-            <UserMenu LoggedIn={loggedIn} />
+            {visible && <UserMenu LoggedIn={loggedIn} />}
           </li>
         </ul>
       </div>

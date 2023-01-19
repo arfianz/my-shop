@@ -10,4 +10,4 @@ Part 1 : Header Component
 1. Add Header and ad/banner picture
 2. Add react-icons package, add Top menu bar
 3. Costumizing menu bar part 1
-
+3. Costumizing menu bar part 2
