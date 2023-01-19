@@ -2,6 +2,8 @@ import Links from './Links';
 import Socials from './Socials';
 import Newsletter from './Newsletter';
 import styles from './styles.module.scss';
+import Payment from './Payment';
+import Copyright from './Copyright';
 
 export default function Footer() {
   return (
@@ -10,6 +12,8 @@ export default function Footer() {
         <Links />
         <Socials />
         <Newsletter />
+        <Payment />
+        <Copyright />
       </div>
     </footer>
   );
