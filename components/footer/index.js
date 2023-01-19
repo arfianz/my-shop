@@ -1,7 +1,7 @@
+import styles from './styles.module.scss';
 import Links from './Links';
 import Socials from './Socials';
 import Newsletter from './Newsletter';
-import styles from './styles.module.scss';
 import Payment from './Payment';
 import Copyright from './Copyright';
 

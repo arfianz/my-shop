@@ -5,7 +5,7 @@ import { IoLocationSharp } from 'react-icons/io5';
 export default function Copyright() {
   return (
     <div className={styles.footer__copyright}>
-      <section>©2022 My-Shop All Rights Reserved.</section>
+      <section>©2022 SHOPPAY All Rights Resereved.</section>
       <section>
         <ul>
           {data.map((link) => (
@@ -23,6 +23,7 @@ export default function Copyright() {
     </div>
   );
 }
+
 const data = [
   {
     name: 'Privacy Center',
