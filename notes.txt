@@ -1,0 +1,3 @@
+Preparation:
+1. Add sass module, using "yarn add sass" or "npm install sass"
+2. Create MongoDB Atlas Cluster, and create .env file to hold MongoDB parameters
