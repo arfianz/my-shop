@@ -1,3 +1,5 @@
 Preparation:
-1. Add sass module, using "yarn add sass" or "npm install sass"
+1. Add sass package, using "yarn add sass" or "npm install sass"
 2. Create MongoDB Atlas Cluster, and create .env file to hold MongoDB parameters
+3. Add mongodb and mongoose package
+4. Test connection with mongodb with test file
