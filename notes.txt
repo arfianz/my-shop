@@ -5,3 +5,5 @@ Preparation:
 4. Test connection with mongodb with test file
 5. Setup Redux toolkit, add package redux, react-redux, @reduxjs/toolkit, next-redux-wrapper, redux-thunk, redux-persist, redux-devtools-extension
 6. Global variable in next config
+
+Part 1 : Header Component
