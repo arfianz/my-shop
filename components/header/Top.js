@@ -8,8 +8,11 @@ import {
 } from 'react-icons/bs';
 import { RiAccountPinCircleLine, RiArrowDropDownFill } from 'react-icons/ri';
 import { useState } from 'react';
+import UserMenu from './UserMenu';
 
 export default function Top() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <div className={styles.top}>
       <div className={styles.top__container}>
@@ -41,11 +44,24 @@ export default function Top() {
             </Link>
           </li>
           <li>
-            <div className={styles.flex}>
-              <RiAccountPinCircleLine />
-              <span>Account</span>
-              <RiArrowDropDownFill />
-            </div>
+            {loggedIn ? (
+              <li>
+                <div className={styles.flex}>
+                  <img src='https://www.pngarts.com/files/11/Avatar-PNG-Picture.png' />
+                  <span>Mr. XXX</span>
+                  <RiArrowDropDownFill />
+                </div>
+              </li>
+            ) : (
+              <li>
+                <div className={styles.flex}>
+                  <RiAccountPinCircleLine />
+                  <span>Account</span>
+                  <RiArrowDropDownFill />
+                </div>
+              </li>
+            )}
+            <UserMenu LoggedIn={loggedIn} />
           </li>
         </ul>
       </div>
