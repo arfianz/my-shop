@@ -11,7 +11,7 @@ import { useState } from 'react';
 import UserMenu from './UserMenu';
 
 export default function Top() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [visible, setVisible] = useState(false);
 
   return (
