@@ -24,3 +24,6 @@ Additional detect user location using IPRegistry
 2. After sign-up, collect the API Key
 3. Add axios package to the app
 4. Customize app for using IPRegistry API
+
+Part 3 : Authentication
+1. Seting Up using nextauth, add next-auth package
