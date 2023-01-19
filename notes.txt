@@ -15,3 +15,4 @@ Part 1 : Header Component
 
 Part 2 : Footer Component
 1. Add Footer
+2. Add Socials and Newsletter component to footer

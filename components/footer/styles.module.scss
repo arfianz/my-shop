@@ -12,11 +12,26 @@
       'copyright';
     gap: 3rem;
     padding: 1rem;
+    @media (min-width: 800px) {
+      grid-template-areas:
+        'links socials'
+        'links newsletter'
+        'copyright payment';
+    }
+    @media (min-width: 1200px) {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
   }
   img {
     width: 140px;
     height: 40px;
     object-fit: contain;
+  }
+  h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #222;
   }
   &__links {
     grid-area: links;
@@ -25,6 +40,9 @@
     gap: 1rem;
     ul {
       padding: 5px;
+      b {
+        text-transform: uppercase;
+      }
       li {
         font-size: 12px;
         a {
@@ -34,6 +52,49 @@
             text-decoration: underline;
           }
         }
+      }
+    }
+  }
+  &__socials {
+    section {
+      ul {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        li {
+          font-size: 2rem;
+          color: #666;
+          &:hover {
+            color: $blue-color;
+          }
+        }
+      }
+    }
+  }
+  &__flex {
+    display: flex;
+    margin-top: 10px;
+  }
+  &__newsletter {
+    input {
+      outline: none;
+      border: 1px solid #999;
+      flex: 1;
+      height: 40px;
+      font-size: 14px;
+      padding-left: 10px;
+    }
+    button {
+      width: 150px;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #666;
+      a {
+        color: $blue-color;
+        text-decoration: underline;
       }
     }
   }
