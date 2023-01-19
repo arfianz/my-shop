@@ -7,3 +7,5 @@ Preparation:
 6. Global variable in next config
 
 Part 1 : Header Component
+1. Add Header and ad/banner picture
+2. Add react-icons package, add Top menu bar
