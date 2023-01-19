@@ -9,8 +9,8 @@ Preparation:
 Part 1 : Header Component
 1. Add Header and ad/banner picture
 2. Add react-icons package, add Top menu bar
-3. Costumizing menu bar part 1
-4. Costumizing menu bar part 2
+3. Customizing menu bar part 1
+4. Customizing menu bar part 2
 5. Add search bar
 
 Part 2 : Footer Component
@@ -18,3 +18,9 @@ Part 2 : Footer Component
 2. Add Socials and Newsletter component to footer
 3. Add Payment and Copyright component to footer
 4. Making footer responsive
+
+Additional detect user location using IPRegistry
+1. Sign-up to https://ipregistry.io
+2. After sign-up, collect the API Key
+3. Add axios package to the app
+4. Customize app for using IPRegistry API
