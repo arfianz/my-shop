@@ -3,3 +3,4 @@ Preparation:
 2. Create MongoDB Atlas Cluster, and create .env file to hold MongoDB parameters
 3. Add mongodb and mongoose package
 4. Test connection with mongodb with test file
+5. Setup Redux toolkit, add package redux, react-redux, @reduxjs/toolkit, next-redux-wrapper, redux-thunk, redux-persist, redux-devtools-extension
