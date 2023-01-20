@@ -8,13 +8,15 @@ import * as Yup from 'yup';
 import LoginInput from '../components/inputs/loginInput';
 import { useState } from 'react';
 import CircledIconBtn from '../components/buttons/circledIconBtn';
+import { getProviders, signIn } from 'next-auth/react';
 
 const initialvalues = {
   login_email: '',
   login_password: '',
 };
 
-export default function signin() {
+export default function signin({ providers }) {
+  // console.log(providers);
   const [user, setUser] = useState(initialvalues);
   const { login_email, login_password } = user;
   const handleChange = (e) => {
@@ -78,10 +80,40 @@ export default function signin() {
                 </Form>
               )}
             </Formik>
+            <div className={styles.login__socials}>
+              <span className={styles.or}>Or continue with</span>
+              <div className={styles.login__socials_wrap}>
+                {providers.map((provider) => {
+                  if (provider.name == 'Credentials') {
+                    return;
+                  }
+                  return (
+                    <div key={provider.name}>
+                      <button
+                        className={styles.social__btn}
+                        onClick={() => signIn(provider.id)}
+                      >
+                        <img src={`../../icons/${provider.name}.png`} alt='' />
+                        Sign in with {provider.name}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <Footer country='Indonesia' />
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const providers = Object.values(await getProviders());
+  // console.log(providers);
+
+  return {
+    props: { providers },
+  };
 }

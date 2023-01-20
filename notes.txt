@@ -37,3 +37,4 @@ Part 3 : Authentication
 9. Customizing sign-in page part 2, add form using Formik and Yup
 10. Customizing sign-in page part 3
 11. Customizing sign-in page part 4, add submit button and error message
+12. Customizing sign-in page part 5, add socials method of signin
