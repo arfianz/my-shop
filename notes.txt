@@ -45,3 +45,4 @@ Part 3 : Authentication
 17. Sign-up process part 4, add googleapis and nodemailer package for send email function for validation link, the function using gmail api (google developer api) and also need google api from google console
 18. Sign-up process part 5, add sendmail function
 19. Sign-up process part 6, create template email for validation using stripo
+20. Sign-up process part 7, continuing configuring add user function

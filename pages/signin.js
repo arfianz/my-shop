@@ -17,10 +17,13 @@ const initialvalues = {
   email: '',
   password: '',
   conf_password: '',
+  success: '',
+  error: '',
 };
 
 export default function signin({ providers }) {
   // console.log(providers);
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(initialvalues);
   const { login_email, login_password, name, email, password, conf_password } =
     user;
@@ -55,6 +58,21 @@ export default function signin({ providers }) {
       .required('Confirm your password.')
       .oneOf([Yup.ref('password')], 'Passwords must match.'),
   });
+  const signUpHandler = async () => {
+    try {
+      setLoading(true);
+      const { data } = await axios.post('/api/auth/signup', {
+        name,
+        email,
+        password,
+      });
+      setUser({ ...user, error: '', success: data.message });
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setUser({ ...user, success: '', error: error.response.data.message });
+    }
+  };
   // console.log(user);
 
   return (
@@ -179,6 +197,10 @@ export default function signin({ providers }) {
                 </Form>
               )}
             </Formik>
+            <div>
+              {success && <span className={styles.success}>{success}</span>}
+            </div>
+            <div>{error && <span className={styles.error}>{error}</span>}</div>
           </div>
         </div>
       </div>
