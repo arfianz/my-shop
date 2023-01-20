@@ -29,3 +29,4 @@ Part 3 : Authentication
 1. Seting Up using nextauth, add next-auth package
 2. Add mongodb adapter package (@next-auth/mongodb-adapter) and for json web token (jwt), you can use password generator and use as jwt
 3. Add github provider, you must have account in github and create OAuth for the app, in the "Authorization callback url" insert "http://localhost:3000/api/auth/callback/github"
+4. Add google provider, you can access to google cloud console and create new project, and go to API and services menu and create new credential for oath client id, in the "Authorised redirect uri" insert "http://localhost:3000/api/auth/callback/google"
