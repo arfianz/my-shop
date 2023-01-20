@@ -42,4 +42,5 @@ Part 3 : Authentication
 14. Sign-up process part 1, add next-connect package, create signup api and test it using postman
 15. Sign-up process part 2, creating model for creating user in database
 16. Sign-up process part 3, add bcrypt and jsonwebtoken package for managing password and validation token
-17. Sign-up process part 3, add googleapis and nodemailer package for send email function for validation link, the function using gmail api (google developer api) and also need google api from google console
+17. Sign-up process part 4, add googleapis and nodemailer package for send email function for validation link, the function using gmail api (google developer api) and also need google api from google console
+18. Sign-up process part 5, add sendmail function
