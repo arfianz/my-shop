@@ -39,3 +39,4 @@ Part 3 : Authentication
 11. Customizing sign-in page part 4, add submit button and error message
 12. Customizing sign-in page part 5, add socials method of signin
 13. Customizing sign-in page part 6, add sign-up container to the page
+14. Sign-up process part 1, add next-connect package, create signup api and test it using postman
