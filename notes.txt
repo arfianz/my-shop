@@ -33,3 +33,4 @@ Part 3 : Authentication
 5. Customizing Top and User Menu component
 6. Add twitter provider, go to twitter developer portal, create new app, and in the Callback URL" insert "http://localhost:3000/api/auth/callback/twitter". You'll got app id+secret and oath id+secret
 7. Add auth0 provider, you must have auth0 account, and you can create new app, after that you can download all the credential you needed
+8. Customizing sign-in page part 1
