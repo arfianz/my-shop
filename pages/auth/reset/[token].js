@@ -14,8 +14,8 @@ import { Formik, Form } from 'formik';
 import { getSession } from 'next-auth/react';
 import { Router } from 'next/router';
 
-export default function reset({ token }) {
-  console.log('token', token);
+export default function reset({ user_id }) {
+  console.log('user_id', user_id);
   const [password, setPassword] = useState('');
   const [conf_password, setConf_password] = useState('');
   const [error, setError] = useState('');
@@ -114,11 +114,24 @@ export default function reset({ token }) {
 }
 
 export async function getServerSideProps(context) {
-  const { query } = context;
+  const { query, req } = context;
+  const session = await getSession({ req });
+  if (session) {
+    return {
+      redirect: {
+        destination: '/',
+      },
+    };
+  }
   const token = query.token;
+  const user_id = jwt.verify('pojadphjapidja', process.env.RESET_TOKEN_SECRET);
+  if (user_id == null) {
+    console.log('adoajdàihjadiohiodhjioadha');
+  }
+  console.log(user_id);
   return {
     props: {
-      token,
+      user_id: user_id.id,
     },
   };
 }

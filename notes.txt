@@ -55,3 +55,4 @@ Part 4 : Forgot and Reset password
 1. Creating Forgot Password page
 2. Creating Forgot Password API and send mail function
 3. Creating Reset Password page and generate token
+4. Finalizing Reset Password API and all the function
