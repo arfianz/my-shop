@@ -50,3 +50,8 @@ Part 3 : Authentication
 22. Sign-up process part 9, add next-auth provider and submit function
 23. Sign-up process part 10, dealing with callback
 24. Sign-up process part 11, dealing with csrf token and wraping all
+
+Part 4 : Forgot and Reset password
+1. Creating Forgot Password page
+2. Creating Forgot Password API and send mail function
+3. Creating Reset Password page and generate token
