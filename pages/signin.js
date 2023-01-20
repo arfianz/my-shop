@@ -7,6 +7,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import LoginInput from '../components/inputs/loginInput';
 import { useState } from 'react';
+import CircledIconBtn from '../components/buttons/circledIconBtn';
 
 const initialvalues = {
   login_email: '',
@@ -26,8 +27,7 @@ export default function signin() {
       .email('Please enter a valid email address.'),
     login_password: Yup.string().required('Please enter a password'),
   });
-
-  console.log(user);
+  // console.log(user);
 
   return (
     <>
@@ -71,6 +71,10 @@ export default function signin() {
                     placeholder='Password'
                     onChange={handleChange}
                   />
+                  <CircledIconBtn type='submit' text='Sign In' />
+                  <div className={styles.forgot}>
+                    <Link href='/auth/forgot'>Forgot password ?</Link>
+                  </div>
                 </Form>
               )}
             </Formik>
