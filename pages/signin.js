@@ -25,7 +25,7 @@ const initialvalues = {
   login_error: '',
 };
 
-export default function signin({ providers }) {
+export default function signin({ providers, callbackUrl }) {
   // console.log(providers);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(initialvalues);
