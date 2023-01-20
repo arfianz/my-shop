@@ -35,3 +35,4 @@ Part 3 : Authentication
 7. Add auth0 provider, you must have auth0 account, and you can create new app, after that you can download all the credential you needed
 8. Customizing sign-in page part 1
 9. Customizing sign-in page part 2, add form using Formik and Yup
+10. Customizing sign-in page part 3
