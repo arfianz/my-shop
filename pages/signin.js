@@ -9,6 +9,9 @@ import LoginInput from '../components/inputs/loginInput';
 import { useState } from 'react';
 import CircledIconBtn from '../components/buttons/circledIconBtn';
 import { getProviders, signIn } from 'next-auth/react';
+import axios from 'axios';
+import DotLoaderSpinner from '../components/loaders/dotLoader';
+import Router from 'next/router';
 
 const initialvalues = {
   login_email: '',
@@ -25,8 +28,16 @@ export default function signin({ providers }) {
   // console.log(providers);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(initialvalues);
-  const { login_email, login_password, name, email, password, conf_password } =
-    user;
+  const {
+    login_email,
+    login_password,
+    name,
+    email,
+    password,
+    conf_password,
+    success,
+    error,
+  } = user;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
@@ -68,6 +79,15 @@ export default function signin({ providers }) {
       });
       setUser({ ...user, error: '', success: data.message });
       setLoading(false);
+      setTimeout(async () => {
+        let options = {
+          redirect: false,
+          email: email,
+          password: password,
+        };
+        const res = await signIn('credentials', options);
+        Router.push('/');
+      }, 2000);
     } catch (error) {
       setLoading(false);
       setUser({ ...user, success: '', error: error.response.data.message });
@@ -77,6 +97,7 @@ export default function signin({ providers }) {
 
   return (
     <>
+      {loading && <DotLoaderSpinner loading={loading} />}
       <Header country='Indonesia' />
       <div className={styles.login}>
         <div className={styles.login__container}>
