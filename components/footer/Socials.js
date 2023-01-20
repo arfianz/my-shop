@@ -19,31 +19,37 @@ export default function Socials() {
               <FaFacebookF />
             </a>
           </li>
+
           <li>
             <a href='/' target='_blank'>
               <BsInstagram />
             </a>
           </li>
+
           <li>
             <a href='/' target='_blank'>
               <BsTwitter />
             </a>
           </li>
+
           <li>
             <a href='/' target='_blank'>
               <BsYoutube />
             </a>
           </li>
+
           <li>
             <a href='/' target='_blank'>
               <BsPinterest />
             </a>
           </li>
+
           <li>
             <a href='/' target='_blank'>
               <BsSnapchat />
             </a>
           </li>
+
           <li>
             <a href='/' target='_blank'>
               <FaTiktok />

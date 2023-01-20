@@ -14,6 +14,7 @@ export default function UserMenu({ session }) {
             className={styles.menu__img}
             referrerPolicy='no-referrer'
           />
+
           <div className={styles.col}>
             <span>Welcome Back,</span>
             <h3>{session.user.name}</h3>
@@ -32,15 +33,19 @@ export default function UserMenu({ session }) {
         <li>
           <Link href='/profile'>Account</Link>
         </li>
+
         <li>
           <Link href='/profile/orders'>My Orders</Link>
         </li>
+
         <li>
           <Link href='/profile/messages'>Message Center</Link>
         </li>
+
         <li>
           <Link href='/profile/address'>Address</Link>
         </li>
+
         <li>
           <Link href='/profile/wishlist'>Wishlist</Link>
         </li>

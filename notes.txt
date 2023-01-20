@@ -49,3 +49,4 @@ Part 3 : Authentication
 21. Sign-up process part 8, add react-spinners for loader function
 22. Sign-up process part 9, add next-auth provider and submit function
 23. Sign-up process part 10, dealing with callback
+24. Sign-up process part 11, dealing with csrf token and wraping all

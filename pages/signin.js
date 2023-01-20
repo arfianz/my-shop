@@ -1,17 +1,23 @@
+import Link from 'next/link';
+import axios from 'axios';
+import Router from 'next/router';
+import * as Yup from 'yup';
+import styles from '../styles/signin.module.scss';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import styles from '../styles/signin.module.scss';
-import { BiLeftArrowAlt } from 'react-icons/bi';
-import Link from 'next/link';
-import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
 import LoginInput from '../components/inputs/loginInput';
-import { useState } from 'react';
 import CircledIconBtn from '../components/buttons/circledIconBtn';
-import { getProviders, signIn } from 'next-auth/react';
-import axios from 'axios';
 import DotLoaderSpinner from '../components/loaders/dotLoader';
-import Router from 'next/router';
+import { BiLeftArrowAlt } from 'react-icons/bi';
+import { Formik, Form } from 'formik';
+import { useState } from 'react';
+import {
+  getCsrfToken,
+  getProviders,
+  getSession,
+  signIn,
+  country,
+} from 'next-auth/react';
 
 const initialvalues = {
   login_email: '',
@@ -25,10 +31,10 @@ const initialvalues = {
   login_error: '',
 };
 
-export default function signin({ providers, callbackUrl }) {
-  // console.log(providers);
+export default function signin({ providers, callbackUrl, csrfToken }) {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(initialvalues);
+
   const {
     login_email,
     login_password,
@@ -40,16 +46,19 @@ export default function signin({ providers, callbackUrl }) {
     error,
     login_error,
   } = user;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
+
   const loginValidation = Yup.object({
     login_email: Yup.string()
       .required('Email address is required.')
       .email('Please enter a valid email address.'),
     login_password: Yup.string().required('Please enter a password'),
   });
+
   const registerValidation = Yup.object({
     name: Yup.string()
       .required("What's your name ?")
@@ -71,6 +80,7 @@ export default function signin({ providers, callbackUrl }) {
       .required('Confirm your password.')
       .oneOf([Yup.ref('password')], 'Passwords must match.'),
   });
+
   const signUpHandler = async () => {
     try {
       setLoading(true);
@@ -95,6 +105,7 @@ export default function signin({ providers, callbackUrl }) {
       setUser({ ...user, success: '', error: error.response.data.message });
     }
   };
+
   const signInHandler = async () => {
     setLoading(true);
     let options = {
@@ -112,12 +123,17 @@ export default function signin({ providers, callbackUrl }) {
       return Router.push(callbackUrl || '/');
     }
   };
+
+  const country = {
+    name: 'Indonesia',
+    flag: 'https://cdn.ipregistry.co/flags/emojitwo/id.svg',
+  };
   // console.log(user);
 
   return (
     <>
       {loading && <DotLoaderSpinner loading={loading} />}
-      <Header country='Indonesia' />
+      <Header country={country} />
       <div className={styles.login}>
         <div className={styles.login__container}>
           <div className={styles.login__header}>
@@ -125,13 +141,13 @@ export default function signin({ providers, callbackUrl }) {
               <BiLeftArrowAlt />
             </div>
             <span>
-              We'd be happy if you join us ! <Link href='/'>Lets Shopping</Link>
+              We'd be happy to join us ! <Link href='/'>Go Store</Link>
             </span>
           </div>
           <div className={styles.login__form}>
             <h1>Sign in</h1>
             <p>
-              Get access to one of the best eCommerce services in the world.
+              Get access to one of the best Eshopping services in the world.
             </p>
             <Formik
               enableReinitialize
@@ -145,7 +161,12 @@ export default function signin({ providers, callbackUrl }) {
               }}
             >
               {(form) => (
-                <Form>
+                <Form method='post' action='/api/auth/signin/email'>
+                  <input
+                    type='hidden'
+                    name='csrfToken'
+                    defaultValue={csrfToken}
+                  />
                   <LoginInput
                     type='text'
                     name='login_email'
@@ -160,7 +181,7 @@ export default function signin({ providers, callbackUrl }) {
                     placeholder='Password'
                     onChange={handleChange}
                   />
-                  <CircledIconBtn type='submit' text='Sign In' />
+                  <CircledIconBtn type='submit' text='Sign in' />
                   {login_error && (
                     <span className={styles.error}>{login_error}</span>
                   )}
@@ -193,11 +214,12 @@ export default function signin({ providers, callbackUrl }) {
             </div>
           </div>
         </div>
+
         <div className={styles.login__container}>
           <div className={styles.login__form}>
-            <h1>Sign Up</h1>
+            <h1>Sign up</h1>
             <p>
-              Get access to one of the best eCommerce services in the world.
+              Get access to one of the best Eshopping services in the world.
             </p>
             <Formik
               enableReinitialize
@@ -239,10 +261,10 @@ export default function signin({ providers, callbackUrl }) {
                     type='password'
                     name='conf_password'
                     icon='password'
-                    placeholder='Re-type Password'
+                    placeholder='Re-Type Password'
                     onChange={handleChange}
                   />
-                  <CircledIconBtn type='submit' text='Sign Up' />
+                  <CircledIconBtn type='submit' text='Sign up' />
                 </Form>
               )}
             </Formik>
@@ -253,16 +275,29 @@ export default function signin({ providers, callbackUrl }) {
           </div>
         </div>
       </div>
-      <Footer country='Indonesia' />
+      <Footer country={country} />
     </>
   );
 }
 
 export async function getServerSideProps(context) {
+  const { req, query } = context;
+
+  const session = await getSession({ req });
+  const { callbackUrl } = query;
+
+  if (session) {
+    return {
+      redirect: {
+        destination: callbackUrl,
+      },
+    };
+  }
+
   const providers = Object.values(await getProviders());
   // console.log(providers);
 
   return {
-    props: { providers },
+    props: { providers, callbackUrl },
   };
 }

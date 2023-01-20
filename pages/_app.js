@@ -1,9 +1,9 @@
 import '../styles/globals.scss';
-import { Provider } from 'react-redux';
+import Head from 'next/head';
 import store from '../store';
+import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
-import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
 
 let persistor = persistStore(store);

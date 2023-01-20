@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './styles.module.scss';
+import UserMenu from './UserMenu';
 import { MdSecurity } from 'react-icons/md';
 import {
   BsSuitHeart,
@@ -9,7 +10,6 @@ import {
 import { RiAccountPinCircleLine, RiArrowDropDownFill } from 'react-icons/ri';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
-import UserMenu from './UserMenu';
 
 export default function Top({ country }) {
   const { data: session } = useSession();
@@ -24,24 +24,29 @@ export default function Top({ country }) {
             <img src={country.flag} alt='' />
             <span>{country.name} / usd</span>
           </li>
+
           <li className={styles.li}>
             <MdSecurity />
-            <span>Buyer protect</span>
+            <span>Buyer Protection</span>
           </li>
+
           <li className={styles.li}>
             <BsFillTelephoneFill />
             <span>Customer Service</span>
           </li>
+
           <li className={styles.li}>
             <BsFillEmojiSmileFill />
             <span>Help</span>
           </li>
+
           <li className={styles.li}>
             <BsSuitHeart />
             <Link href='/profile/wishlist'>
               <span>Wishlist</span>
             </Link>
           </li>
+
           <li
             className={styles.li}
             onMouseOver={() => setVisible(true)}
@@ -68,6 +73,7 @@ export default function Top({ country }) {
                 </div>
               </li>
             )}
+
             {visible && <UserMenu session={session} />}
           </li>
         </ul>
