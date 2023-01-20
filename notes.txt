@@ -32,3 +32,4 @@ Part 3 : Authentication
 4. Add google provider, you can access to google cloud console and create new project, and go to API and services menu and create new credential for oath client id, in the "Authorised redirect uri" insert "http://localhost:3000/api/auth/callback/google"
 5. Customizing Top and User Menu component
 6. Add twitter provider, go to twitter developer portal, create new app, and in the Callback URL" insert "http://localhost:3000/api/auth/callback/twitter". You'll got app id+secret and oath id+secret
+7. Add auth0 provider, you must have auth0 account, and you can create new app, after that you can download all the credential you needed
