@@ -43,10 +43,15 @@ export default function forgot() {
     }
   };
 
+  const country = {
+    name: 'Indonesia',
+    flag: 'https://cdn.ipregistry.co/flags/emojitwo/id.svg',
+  };
+
   return (
     <>
       {loading && <DotLoaderSpinner loading={loading} />}
-      <Header country='' />
+      <Header country={country} />
       <div className={styles.forgot}>
         <div>
           <div className={styles.forgot__header}>
@@ -86,7 +91,7 @@ export default function forgot() {
           </Formik>
         </div>
       </div>
-      <Footer country='' />
+      <Footer country={country} />
     </>
   );
 }
