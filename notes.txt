@@ -27,3 +27,4 @@ Additional detect user location using IPRegistry
 
 Part 3 : Authentication
 1. Seting Up using nextauth, add next-auth package
+2. Add mongodb adapter package (@next-auth/mongodb-adapter) and for json web token (jwt), you can use password generator and use as jwt
