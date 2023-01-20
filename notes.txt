@@ -41,3 +41,4 @@ Part 3 : Authentication
 13. Customizing sign-in page part 6, add sign-up container to the page
 14. Sign-up process part 1, add next-connect package, create signup api and test it using postman
 15. Sign-up process part 2, creating model for creating user in database
+16. Sign-up process part 3, add bcrypt and jsonwebtoken package for managing password and validation token
