@@ -47,3 +47,4 @@ Part 3 : Authentication
 19. Sign-up process part 6, create template email for validation using stripo
 20. Sign-up process part 7, continuing configuring add user function
 21. Sign-up process part 8, add react-spinners for loader function
+22. Sign-up process part 9, add next-auth provider and submit function
