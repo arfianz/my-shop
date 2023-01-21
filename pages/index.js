@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import axios from 'axios';
 import styles from '../styles/Home.module.scss';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import axios from 'axios';
+import Main from '../components/home/main';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Home({ country }) {
@@ -14,6 +15,11 @@ export default function Home({ country }) {
     <div>
       <Header country={country} />
       {session ? 'you are logged in' : 'you are not logged in'}
+      <div className={styles.home}>
+        <div className={styles.container}>
+          <Main />
+        </div>
+      </div>
       <Footer country={country} />
     </div>
   );

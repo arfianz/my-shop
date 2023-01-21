@@ -56,3 +56,6 @@ Part 4 : Forgot and Reset password
 2. Creating Forgot Password API and send mail function
 3. Creating Reset Password page and generate token
 4. Finalizing Reset Password API and all the function
+
+Part 5 : Home page
+1. Customize home page, designing container style for home page
