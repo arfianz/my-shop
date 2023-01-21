@@ -111,7 +111,7 @@ $shadow-2: rgba(99, 99, 99, 0.1) 0px 0px 4px 0px;
   .swiper-slide img {
     height: 300px !important;
     border-radius: 10px !important;
-    box-shadow: $shadow-1;
+    box-shadow: $shadow-1 !important;
   }
   .swiper-pagination-bullet {
     width: 9px !important;
@@ -141,14 +141,18 @@ $shadow-2: rgba(99, 99, 99, 0.1) 0px 0px 4px 0px;
   }
 }
 
+.mainSwiper {
+  .swiper-slide {
+    img {
+      // object-fit: contain;
+    }
+  }
+}
+
 //-------------Offers Swiper------
 .offers_swiper {
   max-width: 550px;
   transform: translateX(33%);
-  @media (max-width: 980px) {
-    transform: translateX(1%);
-    max-width: 750px;
-  }
   .swiper {
     width: 100%;
     height: 100%;
@@ -221,10 +225,12 @@ $shadow-2: rgba(99, 99, 99, 0.1) 0px 0px 4px 0px;
 
 //-------------User Swiper------
 .user__swiper {
+  position: relative;
+  margin-left: 2rem;
   .swiper-slide {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center !important;
+    justify-content: center !important;
     border-radius: 18px;
     font-size: 22px;
     font-weight: bold;

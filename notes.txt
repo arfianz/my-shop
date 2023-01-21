@@ -64,3 +64,4 @@ Part 5 : Home page
 4. Customize offer component
 5. Customize main menu component
 6. Customize user component
+7. Finalizing user component
