@@ -74,4 +74,5 @@ Part 5 : Home page
 14. Cutomize product swiper in home page
 
 Part 6 : Product
-1. Product model
+1. Creating product model
+2. Creating category model
