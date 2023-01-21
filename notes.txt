@@ -60,3 +60,4 @@ Part 4 : Forgot and Reset password
 Part 5 : Home page
 1. Customize home page, designing container style for home page
 2. Designing swiper component using swiper-js, add swiper package
+3. Finalizing swiper component, add auto play
