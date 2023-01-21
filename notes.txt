@@ -62,4 +62,5 @@ Part 5 : Home page
 2. Designing swiper component using swiper-js, add swiper package
 3. Finalizing swiper component, add auto play
 4. Customize offer component
-5. Customize main Menu
+5. Customize main menu component
+6. Customize user component
