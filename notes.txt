@@ -68,5 +68,6 @@ Part 5 : Home page
 8. Customize header component
 9. Making main component on home page responsive
 10. Designing flash deals component
-11. Cusomize flash deals component, add swiper
-12. Cusomize flash deals component, finalizing countdown, add dayjs package
+11. Customize flash deals component, add swiper
+12. Customize flash deals component, finalizing countdown, add dayjs package
+13. Customize category card component, add react-responsive package for optimizing page in small device
