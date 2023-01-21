@@ -65,3 +65,4 @@ Part 5 : Home page
 5. Customize main menu component
 6. Customize user component
 7. Finalizing user component
+8. Customize header component
