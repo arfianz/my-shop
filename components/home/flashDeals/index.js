@@ -14,8 +14,8 @@ import 'swiper/css/pagination';
 // import required modules
 import { Navigation } from 'swiper';
 import { flashDealsArray } from '../../../data/home';
+import FlashCard from './card';
 
-import FlashCard from './Card';
 export default function FlashDeals() {
   return (
     <div className={styles.flashDeals}>
