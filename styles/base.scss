@@ -47,6 +47,10 @@ $shadow-2: rgba(99, 99, 99, 0.1) 0px 0px 4px 0px;
   gap: 5px;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 .error {
   padding: 10px;
   color: $error-color;
@@ -235,8 +239,8 @@ $shadow-2: rgba(99, 99, 99, 0.1) 0px 0px 4px 0px;
   margin-left: 2rem;
   .swiper-slide {
     display: flex;
-    align-items: center !important;
-    justify-content: center !important;
+    align-items: center;
+    justify-content: center;
     border-radius: 18px;
     font-size: 22px;
     font-weight: bold;

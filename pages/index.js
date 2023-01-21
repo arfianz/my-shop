@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import axios from 'axios';
 import styles from '../styles/Home.module.scss';
@@ -20,6 +19,7 @@ import {
 import { useMediaQuery } from 'react-responsive';
 import ProductsSwiper from '../components/productsSwiper';
 import Product from '../models/Product';
+import ProductCard from '../components/productCard';
 
 export default function Home({ country, products }) {
   // console.log('products', products);
@@ -28,7 +28,7 @@ export default function Home({ country, products }) {
   const isMobile = useMediaQuery({ query: '(max-width:550px)' });
 
   return (
-    <div>
+    <>
       <Header country={country} />
       {session ? 'you are logged in' : 'you are not logged in'}
       <div className={styles.home}>
@@ -62,20 +62,15 @@ export default function Home({ country, products }) {
             />
           </div>
           <ProductsSwiper products={women_swiper} />
-          <ProductsSwiper
-            products={gamingSwiper}
-            header='For Gamers'
-            bg='#2f82ff'
-          />
-          <ProductsSwiper
-            products={homeImprovSwiper}
-            header='House Improvements'
-            bg='#5a31f4'
-          />
+          <div className={styles.products}>
+            {products.map((product) => (
+              <ProductCard product={product} key={product._id} />
+            ))}
+          </div>
         </div>
       </div>
       <Footer country={country} />
-    </div>
+    </>
   );
 }
 
@@ -103,3 +98,15 @@ export async function getServerSideProps() {
     },
   };
 }
+/*
+            <ProductsSwiper
+            products={gamingSwiper}
+            header="For Gamers"
+            bg="#2f82ff"
+          />
+          <ProductsSwiper
+            products={homeImprovSwiper}
+            header="House Improvements"
+            bg="#5a31f4"
+          />
+            */
