@@ -71,3 +71,4 @@ Part 5 : Home page
 11. Customize flash deals component, add swiper
 12. Customize flash deals component, finalizing countdown, add dayjs package
 13. Customize category card component, add react-responsive package for optimizing page in small device
+14. Cutomize product swiper in home page

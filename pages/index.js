@@ -17,6 +17,7 @@ import {
   women_swiper,
 } from '../data/home';
 import { useMediaQuery } from 'react-responsive';
+import ProductsSwiper from '../components/productsSwiper';
 
 export default function Home({ country }) {
   // console.log(country);
@@ -58,6 +59,17 @@ export default function Home({ country }) {
               background='#000'
             />
           </div>
+          <ProductsSwiper products={women_swiper} />
+          <ProductsSwiper
+            products={gamingSwiper}
+            header='For Gamers'
+            bg='#2f82ff'
+          />
+          <ProductsSwiper
+            products={homeImprovSwiper}
+            header='House Improvements'
+            bg='#5a31f4'
+          />
         </div>
       </div>
       <Footer country={country} />
