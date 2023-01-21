@@ -67,3 +67,4 @@ Part 5 : Home page
 7. Finalizing user component
 8. Customize header component
 9. Making main component on home page responsive
+10. Designing flash deals component

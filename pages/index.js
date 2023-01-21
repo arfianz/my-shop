@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.scss';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Main from '../components/home/main';
+import FlashDeals from '../components/home/flashDeals';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Home({ country }) {
@@ -18,6 +19,7 @@ export default function Home({ country }) {
       <div className={styles.home}>
         <div className={styles.container}>
           <Main />
+          <FlashDeals />
         </div>
       </div>
       <Footer country={country} />
