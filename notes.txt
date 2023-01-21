@@ -77,3 +77,4 @@ Part 6 : Product
 1. Creating product model
 2. Creating category model
 3. Creating sub category model
+4. Add and get products from database, import json file from folder data to database

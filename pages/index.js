@@ -7,6 +7,7 @@ import Footer from '../components/footer';
 import Main from '../components/home/main';
 import FlashDeals from '../components/home/flashDeals';
 import Category from '../components/home/category';
+import db from '../utils/db';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import {
   gamingSwiper,
@@ -18,9 +19,10 @@ import {
 } from '../data/home';
 import { useMediaQuery } from 'react-responsive';
 import ProductsSwiper from '../components/productsSwiper';
+import Product from '../models/Product';
 
-export default function Home({ country }) {
-  // console.log(country);
+export default function Home({ country, products }) {
+  // console.log('products', products);
   const { data: session } = useSession();
   const isMedium = useMediaQuery({ query: '(max-width:850px)' });
   const isMobile = useMediaQuery({ query: '(max-width:550px)' });
@@ -78,6 +80,9 @@ export default function Home({ country }) {
 }
 
 export async function getServerSideProps() {
+  db.connectDb();
+  let products = await Product.find().sort({ createdAt: -1 }).lean();
+  // console.log(products);
   let data = await axios
     .get('https://api.ipregistry.co/?key=r208izz0q0icseks')
     .then((res) => {
@@ -89,6 +94,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
+      products: JSON.parse(JSON.stringify(products)),
       // country: { name: data.name, flag: data.flag.emojitwo },
       country: {
         name: 'Indonesia',
