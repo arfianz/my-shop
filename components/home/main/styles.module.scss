@@ -8,7 +8,7 @@
     'menu offers user';
   .menu {
     grid-area: menu;
-    height: 560px;
+    height: 580px;
     background: #fff;
     border-radius: 10px;
     box-shadow: $shadow-1;
@@ -29,14 +29,18 @@
   }
   .offers {
     grid-area: offers;
-    height: 200px;
+    overflow: hidden;
+    height: 220px;
     background: #fff;
     border-radius: 10px;
     box-shadow: $shadow-1;
+    background-image: url('../../../public/images/flash.webp');
+    background-position: -275px -135px;
+    background-size: cover;
   }
   .user {
     grid-area: user;
-    height: 510px;
+    height: 530px;
     background: #fff;
     border-radius: 10px;
     box-shadow: $shadow-1;
