@@ -12,6 +12,42 @@
     background: #fff;
     border-radius: 10px;
     box-shadow: $shadow-1;
+    &__header {
+      width: 100%;
+      height: 35px;
+      background: $grey-color;
+      border-bottom: 1px solid $grey-color;
+      box-shadow: $shadow-2;
+      svg {
+        height: 23px;
+        width: 23px;
+      }
+    }
+    &__list {
+      margin-top: 3px;
+    }
+    ul {
+      li {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+          background: $grey-color;
+        }
+      }
+      a {
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #424141;
+        svg {
+          fill: #8c8484;
+          stroke: #8c8484;
+        }
+      }
+    }
   }
   .header {
     grid-area: header;
