@@ -66,3 +66,4 @@ Part 5 : Home page
 6. Customize user component
 7. Finalizing user component
 8. Customize header component
+9. Making main component on home page responsive
