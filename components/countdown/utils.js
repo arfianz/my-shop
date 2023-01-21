@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 
 export function calcaulateDiff(timeInMs) {
   const timestamDayjs = dayjs(timeInMs);
+
   const nowDayjs = dayjs();
   if (timestamDayjs.isBefore(nowDayjs)) {
     return {
@@ -11,6 +12,7 @@ export function calcaulateDiff(timeInMs) {
       days: '00',
     };
   }
+
   return {
     seconds: getRemainingSeconds(nowDayjs, timestamDayjs),
     minutes: getRemainingMinutes(nowDayjs, timestamDayjs),

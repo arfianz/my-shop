@@ -69,3 +69,4 @@ Part 5 : Home page
 9. Making main component on home page responsive
 10. Designing flash deals component
 11. Cusomize flash deals component, add swiper
+12. Cusomize flash deals component, finalizing countdown, add dayjs package
