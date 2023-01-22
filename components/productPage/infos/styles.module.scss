@@ -119,6 +119,55 @@
       }
     }
   }
+  &__actions {
+    @media (min-width: 1160px) {
+      display: flex;
+      gap: 1rem;
+      button {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 60px;
+        color: #666;
+        font-weight: 600;
+        font-size: 17px;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.2s;
+        svg {
+          width: 30px;
+          height: 30px;
+          transform: translateY(-3px);
+        }
+        &:first-of-type {
+          background-image: linear-gradient(
+            to top,
+            #f3e7e9 0%,
+            #e3eeff 99%,
+            #e3eeff 100%
+          );
+        }
+        &:last-of-type {
+          border: 1px solid #000;
+          background: #222;
+          color: #fff;
+          svg {
+            margin-top: 5px;
+          }
+          @media (min-width: 1160px) {
+            width: 300px;
+          }
+          &:hover {
+            background: transparent;
+            border: 1px solid #333;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
 }
 
 .active_size {

@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import styles from './styles.module.scss';
+import Share from '../share';
+
 import { Rating } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { TbPlus, TbMinus } from 'react-icons/tb';
+import { BsHandbagFill, BsHeart } from 'react-icons/bs';
 
 export default function Infos({ product, setActiveImg }) {
   const router = useRouter();
@@ -110,6 +113,22 @@ export default function Infos({ product, setActiveImg }) {
             <TbPlus />
           </button>
         </div>
+
+        <div className={styles.infos__actions}>
+          <button
+            disabled={product.quantity < 1}
+            style={{ cursor: `${product.quantity < 1 ? 'not-allowed' : ''}` }}
+          >
+            <BsHandbagFill />
+            <b>Add To Cart</b>
+          </button>
+          <button>
+            <BsHeart />
+            <b>Add to Wishlist</b>
+          </button>
+        </div>
+
+        <Share />
       </div>
     </div>
   );
