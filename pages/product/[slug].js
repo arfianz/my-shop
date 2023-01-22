@@ -9,6 +9,7 @@ import Footer from '../../components/footer';
 import MainSwiper from '../../components/productPage/mainSwiper';
 import { useState } from 'react';
 import Infos from '../../components/productPage/infos';
+import Reviews from '../../components/productPage/reviews';
 
 export default function ProductSlug({ product }) {
   // console.log(product);
@@ -32,6 +33,7 @@ export default function ProductSlug({ product }) {
             <MainSwiper images={product.images} activeImg={activeImg} />
             <Infos product={product} setActiveImg={setActiveImg} />
           </div>
+          <Reviews product={product} />
         </div>
       </div>
     </div>
@@ -91,6 +93,23 @@ export async function getServerSideProps(context) {
 
     priceBefore: subProduct.sizes[size].price,
     quantity: subProduct.sizes[size].qty,
+    ratings: [
+      {
+        percentage: 76,
+      },
+      {
+        percentage: 14,
+      },
+      {
+        percentage: 6,
+      },
+      {
+        percentage: 4,
+      },
+      {
+        percentage: 0,
+      },
+    ],
   };
   console.log('newProduct', newProduct);
   //------------

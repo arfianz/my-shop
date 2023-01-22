@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './styles.module.scss';
-import Share from '../share';
+import Share from './share';
 import Accordian from './accordian';
 
 import { Rating } from '@mui/material';
