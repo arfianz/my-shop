@@ -86,3 +86,4 @@ Part 7 : Product page
 3. Product page part 3, customize product page, add zoom function using react-image-magnify package
 4. Product page part 4, add product info component, add name, rating using material ui package and price info
 5. Product page part 5, add style and select size
+6. Product page part 6, fix quantity and set quantity

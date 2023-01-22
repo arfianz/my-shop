@@ -2,11 +2,23 @@ import Link from 'next/link';
 import styles from './styles.module.scss';
 import { Rating } from '@mui/material';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { TbPlus, TbMinus } from 'react-icons/tb';
 
-export default function Infos({ product }) {
+export default function Infos({ product, setActiveImg }) {
   const router = useRouter();
+
   const [size, setSize] = useState(router.query.size);
+  const [qty, setQty] = useState(1);
+  useEffect(() => {
+    setSize('');
+    setQty(1);
+  }, [router.query.style]);
+  useEffect(() => {
+    if (qty > product.quantity) {
+      setQty(product.quantity);
+    }
+  }, [router.query.size]);
 
   return (
     <div className={styles.infos}>
@@ -22,7 +34,7 @@ export default function Infos({ product }) {
             style={{ color: '#FACF19' }}
           />
           ({product.numReviews}
-          {product.numReviews == 1 ? 'review' : 'reviews'})
+          {product.numReviews == 1 ? ' review' : ' reviews'})
         </div>
 
         <div className={styles.infos__price}>
@@ -44,7 +56,7 @@ export default function Infos({ product }) {
         </span>
 
         <span>
-          {!size
+          {size
             ? product.quantity
             : product.sizes.reduce((start, next) => start + next.qty, 0)}{' '}
           pieces available.
@@ -68,6 +80,35 @@ export default function Infos({ product }) {
               </Link>
             ))}
           </div>
+        </div>
+
+        <div className={styles.infos__colors}>
+          {product.colors &&
+            product.colors.map((color, i) => (
+              <span
+                className={i == router.query.style ? styles.active_color : ''}
+                onMouseOver={() =>
+                  setActiveImg(product.subProducts[i].images[0].url)
+                }
+                onMouseLeave={() => setActiveImg('')}
+              >
+                <Link href={`/product/${product.slug}?style=${i}`}>
+                  <img src={color.image} alt='' />
+                </Link>
+              </span>
+            ))}
+        </div>
+
+        <div className={styles.infos__qty}>
+          <button onClick={() => qty > 1 && setQty((prev) => prev - 1)}>
+            <TbMinus />
+          </button>
+          <span>{qty}</span>
+          <button
+            onClick={() => qty < product.quantity && setQty((prev) => prev + 1)}
+          >
+            <TbPlus />
+          </button>
         </div>
       </div>
     </div>
