@@ -110,6 +110,18 @@ export async function getServerSideProps(context) {
         percentage: 0,
       },
     ],
+    allSizes: product.subProducts
+      .map((p) => {
+        return p.sizes;
+      })
+      .flat()
+      .sort((a, b) => {
+        return a.size - b.size;
+      })
+      .filter(
+        (element, index, array) =>
+          array.findIndex((el2) => el2.size === element.size) === index
+      ),
   };
   console.log('newProduct', newProduct);
   //------------

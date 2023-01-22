@@ -90,4 +90,5 @@ Part 7 : Product page
 7. Product page part 7, add action (add-to-cart, wishlist, share-to-social) function
 8. Product page part 8, add product detail using accordion
 9. Product page part 9, add similar product component and repair some styling
-10. Product page part 10, add review component part 1, 
+10. Product page part 10, add review component part 1, display rating/star
+11. Product page part 11, add review component part 1, display add-review 
