@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './styles.module.scss';
 import Share from '../share';
+import Accordian from './accordian';
 
 import { Rating } from '@mui/material';
 import { useRouter } from 'next/router';
@@ -129,6 +130,7 @@ export default function Infos({ product, setActiveImg }) {
         </div>
 
         <Share />
+        <Accordian details={[product.description, ...product.details]} />
       </div>
     </div>
   );

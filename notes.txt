@@ -88,3 +88,4 @@ Part 7 : Product page
 5. Product page part 5, add style and select size
 6. Product page part 6, fix quantity and set quantity
 7. Product page part 7, add action (add-to-cart, wishlist, share-to-social) function
+8. Product page part 8, add product detail using accordion
