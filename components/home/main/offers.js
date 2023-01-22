@@ -25,7 +25,7 @@ export default function MainOffers() {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className='offers_swiper'
+        className='offers__swiper'
       >
         {offersAarray.map((offer) => (
           <SwiperSlide>

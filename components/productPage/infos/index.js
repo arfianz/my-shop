@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { TbPlus, TbMinus } from 'react-icons/tb';
 import { BsHandbagFill, BsHeart } from 'react-icons/bs';
+import SimilarSwiper from './similarSwiper';
 
 export default function Infos({ product, setActiveImg }) {
   const router = useRouter();
@@ -131,6 +132,7 @@ export default function Infos({ product, setActiveImg }) {
 
         <Share />
         <Accordian details={[product.description, ...product.details]} />
+        <SimilarSwiper />
       </div>
     </div>
   );

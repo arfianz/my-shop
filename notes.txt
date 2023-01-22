@@ -89,3 +89,4 @@ Part 7 : Product page
 6. Product page part 6, fix quantity and set quantity
 7. Product page part 7, add action (add-to-cart, wishlist, share-to-social) function
 8. Product page part 8, add product detail using accordion
+9. Product page part 9, add similar product component and repair some styling
