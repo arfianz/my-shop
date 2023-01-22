@@ -6,9 +6,13 @@ import Category from '../../models/Category';
 import SubCategory from '../../models/SubCategory';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import MainSwiper from '../../components/productPage/mainSwiper';
+import { useState } from 'react';
 
 export default function ProductSlug({ product }) {
-  console.log(product);
+  // console.log(product);
+  const [activeImg, setActiveImg] = useState('');
+
   return (
     <div>
       <Head>
@@ -20,8 +24,12 @@ export default function ProductSlug({ product }) {
           <div className={styles.path}>
             Home / {product.category.name}
             {product.subCategories.map((sub) => (
-              <span>/{sub.name}</span>
+              <span> / {sub.name}</span>
             ))}
+          </div>
+          <div className={styles.product__main}>
+            <MainSwiper images={product.images} activeImg={activeImg} />
+            <div></div>
           </div>
         </div>
       </div>
