@@ -79,3 +79,6 @@ Part 6 : Product
 3. Creating sub category model
 4. Add and get products from database, import json file from folder data to database
 5. Creating product card
+
+Part 7 : Product page
+1. Product page part 1, product page preparation from product model
