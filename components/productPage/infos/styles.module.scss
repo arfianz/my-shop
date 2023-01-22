@@ -43,4 +43,44 @@
       }
     }
   }
+  &__shipping {
+    display: block;
+    color: $blue-color;
+  }
+  &__sizes {
+    margin-top: 1rem;
+    &_wrap {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+    &_size {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid #e6e6e6;
+      cursor: pointer;
+      &:hover {
+        background-image: linear-gradient(
+          to top,
+          #f3e7e9 0%,
+          #e3eeff 99%,
+          #e3eeff 100%
+        );
+      }
+    }
+  }
+}
+
+.active_size {
+  background-image: linear-gradient(
+    to top,
+    #f3e7e9 0%,
+    #e3eeff 99%,
+    #e3eeff 100%
+  );
 }
