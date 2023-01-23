@@ -93,3 +93,4 @@ Part 7 : Product page
 10. Product page part 10, add review component part 1, display rating/star
 11. Product page part 11, add review component part 2, create add-review function
 12. Product page part 12, add review component part 3, select size and style function
+13. Product page part 13, add review component part 4, add textarea for review

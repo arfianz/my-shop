@@ -28,6 +28,10 @@ export default function Select({ property, text, data, handleChange }) {
             property || `Select ${text}`
           ) : text == 'Style' && property.image ? (
             <img src={property.image} alt='' />
+          ) : text == 'How does it fit' && property ? (
+            property
+          ) : !property && text == 'How does it fit' ? (
+            'How does it fit'
           ) : (
             'Select Style'
           )}
@@ -47,6 +51,7 @@ export default function Select({ property, text, data, handleChange }) {
                   </li>
                 );
               }
+
               if (text == 'Style') {
                 return (
                   <li
@@ -57,6 +62,14 @@ export default function Select({ property, text, data, handleChange }) {
                     <span>
                       <img src={item.image} alt='' />
                     </span>
+                  </li>
+                );
+              }
+
+              if (text == 'How does it fit') {
+                return (
+                  <li key={i} onClick={() => handleChange(item)}>
+                    <span>{item}</span>
                   </li>
                 );
               }
