@@ -97,3 +97,5 @@ Part 7 : Product page
 14. Product page part 14, add review component part 5, add select review images
 15. Product page part 15, add review component part 6, display existing review on table, insert users.json to database and create pagination
 16. Product page part 16, add review component part 7, display existing review on table, display user who reviewed
+17. Product page part 17, add review component part 8, create table header component for existing review, fixing some styling
+

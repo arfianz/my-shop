@@ -1,10 +1,12 @@
 import styles from './styles.module.scss';
 import usePagination from './pagination';
-import { useState } from 'react';
-import { Pagination } from '@mui/material';
 import Review from './review';
+import TableHeader from './tableHeader';
 
-export default function Table({ reviews }) {
+import { Pagination } from '@mui/material';
+import { useState } from 'react';
+
+export default function Table({ reviews, allSizes, colors }) {
   // console.log(reviews);
   const [page, setPage] = useState(1);
   const PER_PAGE = 3;
@@ -18,7 +20,11 @@ export default function Table({ reviews }) {
 
   return (
     <div className={styles.table}>
-      <div className={styles.table__header}></div>
+      <TableHeader
+        reviews={reviews}
+        allSizes={[{ size: 'All' }, ...allSizes]}
+        colors={[{ color: '', image: '' }, ...colors]}
+      />
       <div className={styles.table__data}>
         {_DATA.currentData().map((review, i) => (
           <Review review={review} key={i} />
@@ -29,7 +35,7 @@ export default function Table({ reviews }) {
           count={count}
           page={page}
           variant='round'
-          shape='round'
+          shape='rounded'
           onChange={handleChange}
         />
       </div>

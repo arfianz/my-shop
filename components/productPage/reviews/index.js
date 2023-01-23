@@ -54,10 +54,12 @@ export default function Reviews({ product }) {
           </button>
         )}
 
-        <Table reviews={product.reviews} />
+        <Table
+          reviews={product.reviews}
+          allSizes={product.allSizes}
+          colors={product.colors}
+        />
       </div>
     </div>
   );
 }
-
-const ratings = ['5', '4', '3', '2', '1'];
