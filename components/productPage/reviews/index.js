@@ -3,6 +3,7 @@ import AddReview from './addReview';
 
 import { Rating } from '@mui/material';
 import { useSession, signIn } from 'next-auth/react';
+import Table from './table';
 
 export default function Reviews({ product }) {
   const { data: session } = useSession();
@@ -52,7 +53,11 @@ export default function Reviews({ product }) {
             Login to add review
           </button>
         )}
+
+        <Table reviews={product.reviews} />
       </div>
     </div>
   );
 }
+
+const ratings = ['5', '4', '3', '2', '1'];

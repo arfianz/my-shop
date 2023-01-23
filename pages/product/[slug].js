@@ -4,15 +4,18 @@ import db from '../../utils/db';
 import Product from '../../models/Product';
 import Category from '../../models/Category';
 import SubCategory from '../../models/SubCategory';
+import User from '../../models/User';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import MainSwiper from '../../components/productPage/mainSwiper';
-import { useState } from 'react';
 import Infos from '../../components/productPage/infos';
 import Reviews from '../../components/productPage/reviews';
 
+import { useState } from 'react';
+
 export default function ProductSlug({ product }) {
   // console.log(product);
+  // console.log('reviews', product.reviews);
   const [activeImg, setActiveImg] = useState('');
 
   return (
@@ -52,6 +55,7 @@ export async function getServerSideProps(context) {
   let product = await Product.findOne({ slug })
     .populate({ path: 'category', model: Category })
     .populate({ path: 'subCategories._id', model: SubCategory })
+    .populate({ path: 'reviews.reviewBy', model: User })
     .lean();
   // console.log(product);
   let subProduct = product.subProducts[style];
