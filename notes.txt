@@ -95,4 +95,5 @@ Part 7 : Product page
 12. Product page part 12, add review component part 3, select size and style function
 13. Product page part 13, add review component part 4, add textarea for review
 14. Product page part 14, add review component part 5, add select review images
-15. Product page part 15, add review component part 6, display existing review on table, insert users.json to database
+15. Product page part 15, add review component part 6, display existing review on table, insert users.json to database and create pagination
+16. Product page part 16, add review component part 7, display existing review on table, display user who reviewed
