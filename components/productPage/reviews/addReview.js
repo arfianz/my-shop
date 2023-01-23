@@ -1,5 +1,6 @@
 import styles from './styles.module.scss';
 import Select from './select';
+import Images from './images';
 import { useState } from 'react';
 import { Rating } from '@mui/material';
 
@@ -9,6 +10,8 @@ export default function AddReview({ product }) {
   const [fit, setFit] = useState('');
   const [review, setReview] = useState('');
   const [rating, setRating] = useState();
+
+  const [images, setImages] = useState([]);
 
   return (
     <div className={styles.reviews__add}>
@@ -34,6 +37,7 @@ export default function AddReview({ product }) {
           />
         </div>
 
+        <Images images={images} setImages={setImages} />
         <textarea
           name='review'
           value={review}
