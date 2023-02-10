@@ -1,14 +1,16 @@
 import Link from 'next/link';
+import axios from 'axios';
+
 import styles from './styles.module.scss';
 import Share from './share';
 import Accordian from './accordian';
+import SimilarSwiper from './similarSwiper';
 
 import { Rating } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { TbPlus, TbMinus } from 'react-icons/tb';
 import { BsHandbagFill, BsHeart } from 'react-icons/bs';
-import SimilarSwiper from './similarSwiper';
 
 export default function Infos({ product, setActiveImg }) {
   const router = useRouter();
@@ -24,6 +26,13 @@ export default function Infos({ product, setActiveImg }) {
       setQty(product.quantity);
     }
   }, [router.query.size]);
+
+  const addToCartHandler = async () => {
+    const { data } = await axios.get(
+      `/api/product/${product._id}?style=${product.style}&size=${router.query.size}`
+    );
+    console.log('data ---->', data);
+  };
 
   return (
     <div className={styles.infos}>
@@ -120,6 +129,7 @@ export default function Infos({ product, setActiveImg }) {
           <button
             disabled={product.quantity < 1}
             style={{ cursor: `${product.quantity < 1 ? 'not-allowed' : ''}` }}
+            onClick={() => addToCartHandler()}
           >
             <BsHandbagFill />
             <b>Add To Cart</b>

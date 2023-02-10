@@ -101,4 +101,5 @@ Part 7 : Product page
 
 Part 8 : Product cart
 1. Product Cart part 1, creating cart page
+2. Product Cart part 2, 
 
